@@ -90,3 +90,9 @@
     
 })(jQuery);
 
+function closeNavMob(params) {
+    const navElement = document.getElementById('navbarCollapse');
+    navElement.classList.add('fadeOutUp')
+    navElement.classList.remove('show')
+}
+
