@@ -565,12 +565,14 @@
                         <!-- a class="btn btn-link" href="">Support</a -->
                     </div>
                     <!--div class="col-sm-6">
-                        <h4 class="text-light mb-4">Popular Links</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Our Services</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Support</a>
+                        <h4 class="text-light mb-4">Contact Us</h4>
+                        <form name="submit-to-google-sheet">
+                            <input class="form-control mb-3 me-sm-5" name="email" type="email" placeholder="Email" required>
+                            <input class="form-control mb-3 me-sm-5" name="name" type="name" placeholder="Name" required>
+                            <input class="form-control mb-3 me-sm-5" name="phone" type="tel" placeholder="Phone number" required>
+                            <textarea class="form-control mb-3 me-sm-5" name="message" type="text" rows="3" placeholder="Send us a message"></textarea>
+                            <button class="btn btn-primary p-2" type="submit">Send Message</button>
+                        </form>
                     </div>
                     <div class="col-sm-12">
                         <h4 class="text-light mb-4">Newsletter</h4>
@@ -605,6 +607,27 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <!-- Submit to google sheet   -->
+
+    <!-- <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>  -->
+              
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwU1Tx7cqnqyxYcNd53BPbtPFVRqE3S3hGrulMMOXz7lfntqX-9GWnCCIcz0ECpL4xTPw/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            console.log('Success!', response);
+            form.reset();
+            alert("Thank you for showing interest.\n\nWe'll get back to you in a while")
+        })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script> 
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
