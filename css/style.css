@@ -456,3 +456,20 @@
     letter-spacing: 1px;
     box-shadow: none;
 }
+
+/* Contact block */
+.contact-block-width{
+    width: 70%;
+}
+
+@media (max-width: 1024px){
+    .contact-block-width{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px){
+    .contact-block-width{
+        width: 100%;
+    }
+}
