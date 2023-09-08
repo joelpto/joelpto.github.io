@@ -473,3 +473,10 @@
         width: 100%;
     }
 }
+
+.img-size{
+    object-fit: cover;
+    width: 50px;
+    margin:20px;
+    height: 100px;
+}
