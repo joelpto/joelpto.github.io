@@ -96,3 +96,9 @@ function closeNavMob(params) {
     navElement.classList.remove('show')
 }
 
+// set clicked img as initial img in carousel when opening image in modal
+function clickImgNav(imgValue) {
+    const navElement = document.getElementById('img-nav-' + imgValue);
+    navElement.click();
+}
+
