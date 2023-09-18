@@ -451,15 +451,12 @@
 }
 
 .carousel-indicator{
-    
     position: fixed;
-    top: calc(100vh - 130px);
-    /* right: 111px; */
     width: 100vw !important;
     margin: 0px;
     display: flex;
-    justify-content: center;
     overflow-x: auto;
+    bottom: 10px;
 }
 .carousel-indicator button {
     /* width: 80px !important;
@@ -472,6 +469,14 @@
 .carousel-indicator button:focus-visible {
     background: none;
     border: none;
+}
+
+.carousel-indicator button:first-child {
+    margin-left: auto;
+}
+
+.carousel-indicator button:last-child {
+    margin-right: auto;
 }
 
 .image-gallery{
